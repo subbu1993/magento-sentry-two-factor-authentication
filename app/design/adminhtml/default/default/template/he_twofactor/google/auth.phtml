@@ -30,6 +30,7 @@
     $user            = Mage::getSingleton('admin/session')->getUser();
     $admin_user      = Mage::getModel('admin/user')->load($user->getId());
     $secret          = $admin_user->getTwofactorGoogleSecret();
+    $trustedHelper   = Mage::helper("he_twofactorauth/trusted");
 
     if (!empty($secret)) {
         // $msg = Mage::helper('he_twofactorauth')->__('Please complete the Google two factor authentication');
